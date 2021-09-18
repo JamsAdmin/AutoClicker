@@ -1,0 +1,102 @@
+object frmHint: TfrmHint
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'frmHint'
+  ClientHeight = 51
+  ClientWidth = 201
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnl1: TPanel
+    Left = 0
+    Top = 0
+    Width = 193
+    Height = 49
+    Cursor = crHandPoint
+    BevelOuter = bvNone
+    ParentBackground = False
+    TabOrder = 0
+    OnClick = pnl1Click
+    object lblClickOrPress: TLabel
+      Left = 26
+      Top = 8
+      Width = 136
+      Height = 14
+      Caption = 'Click or Press ESC to Pick'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lbl3: TLabel
+      Left = 26
+      Top = 27
+      Width = 11
+      Height = 14
+      Caption = 'X:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 90
+      Top = 27
+      Width = 12
+      Height = 14
+      Caption = 'Y:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lblPosY: TLabel
+      Left = 104
+      Top = 27
+      Width = 21
+      Height = 14
+      Caption = '100'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lblPosX: TLabel
+      Left = 42
+      Top = 27
+      Width = 21
+      Height = 14
+      Caption = '100'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+  end
+  object tmrMoveWindow: TTimer
+    Interval = 10
+    OnTimer = tmrMoveWindowTimer
+    Left = 104
+    Top = 56
+  end
+end
