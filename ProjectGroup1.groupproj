@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{70BF7D45-565F-4C81-BC68-29C9FC2B91D0}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="AutoClicker.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Hooks-master\HookDemo.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="AutoClicker">
+			<MSBuild Projects="AutoClicker.dproj"/>
+		</Target>
+		<Target Name="AutoClicker:Clean">
+			<MSBuild Targets="Clean" Projects="AutoClicker.dproj"/>
+		</Target>
+		<Target Name="AutoClicker:Make">
+			<MSBuild Targets="Make" Projects="AutoClicker.dproj"/>
+		</Target>
+		<Target Name="HookDemo">
+			<MSBuild Projects="Hooks-master\HookDemo.dproj"/>
+		</Target>
+		<Target Name="HookDemo:Clean">
+			<MSBuild Targets="Clean" Projects="Hooks-master\HookDemo.dproj"/>
+		</Target>
+		<Target Name="HookDemo:Make">
+			<MSBuild Targets="Make" Projects="Hooks-master\HookDemo.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="AutoClicker;HookDemo"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="AutoClicker:Clean;HookDemo:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="AutoClicker:Make;HookDemo:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>
